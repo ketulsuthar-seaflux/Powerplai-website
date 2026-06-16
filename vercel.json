@@ -1,18 +1,18 @@
 {
-  "cleanUrls": true,
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/client",
-  "rewrites": [
+  "cleanUrls":true,
+  "buildCommand":"npm run build",
+  "outputDirectory":"dist/client",
+  "routes":[
     {
-      "handle": "filesystem"
+      "handle":"filesystem"
     },
     {
-      "source": "/airo-assets/:type/:key*",
-      "destination": "/api/airo-assets?type=:type&key=:key*"
+      "src":"/airo-assets/(.*)",
+      "dest":"/api/airo-assets?key=$1"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src":"/.*",
+      "dest":"/index.html"
     }
   ]
 }
