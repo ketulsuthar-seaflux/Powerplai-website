@@ -4,6 +4,9 @@
   "outputDirectory": "dist/client",
   "rewrites": [
     {
+      "handle": "filesystem"
+    },
+    {
       "source": "/airo-assets/:type/:key*",
       "destination": "/api/airo-assets?type=:type&key=:key*"
     },
